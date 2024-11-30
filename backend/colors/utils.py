@@ -1,5 +1,18 @@
 import random
 
+COLOR_GENERATORS = {}
+
+def register_color_generator(color_type):
+    """
+    Decorator to register a color generator function.
+    """
+    def wrapper(func):
+        COLOR_GENERATORS[color_type] = func
+        return func
+    return wrapper
+
+# Color generation functions
+@register_color_generator('rgb')
 def generate_rgb_color():
     return {
         'type': 'rgb',
@@ -8,6 +21,7 @@ def generate_rgb_color():
         'blue': random.randint(0, 255)
     }
 
+@register_color_generator('hsl')
 def generate_hsl_color():
     return {
         'type': 'hsl',
@@ -16,12 +30,31 @@ def generate_hsl_color():
         'lightness': random.randint(0, 100)
     }
 
-def generate_random_color():
-    # Generate 5 random color swatches in RGB and HSL color spaces
+@register_color_generator('brgb')
+def generate_brgb_color():
+    return {
+        'type': 'brgb',
+        'red': random.randint(0, 128),   # Bounded range for red
+        'green': random.randint(0, 128), # Bounded range for green
+        'blue': random.randint(0, 128)   # Bounded range for blue
+    }
+    
+def generate_random_color(num_colors=5):
+    """
+    Generate random color swatches using registered color generators.
+
+    Args:
+        num_colors (int): Number of random colors to generate.
+
+    Returns:
+        List[dict]: List of randomly generated colors.
+    """
     colors = []
-    for _ in range(5):
-        if random.choice([True, False]):
-            colors.append(generate_rgb_color())
-        else:
-            colors.append(generate_hsl_color())
+    generator_names = list(COLOR_GENERATORS.keys())
+    
+    for _ in range(num_colors):
+        # Randomly pick a color type and generate a color
+        color_type = random.choice(generator_names)
+        colors.append(COLOR_GENERATORS[color_type]())
+    
     return colors
