@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/colorSwatch/static/css/main.f855e6bc.css",
+    "main.js": "/colorSwatch/static/js/main.38d01296.js",
+    "index.html": "/colorSwatch/index.html",
+    "main.f855e6bc.css.map": "/colorSwatch/static/css/main.f855e6bc.css.map",
+    "main.38d01296.js.map": "/colorSwatch/static/js/main.38d01296.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.38d01296.js"
+  ]
+}
