@@ -9,7 +9,7 @@
 
 **Install dependencies:**
 
-**Frontend**
+**Frontend** :    This will start the frontend on http://localhost:3000.
 
     cd frontend
 
@@ -17,10 +17,10 @@
 
     npm start
 
-    This will start the frontend on http://localhost:3000.
 
-
-**Backend**
+**Backend** :     This will start the Django server on http://localhost:8000.
+    
+**API** - http://localhost:8000/api/colors
     
     cd backend
     
@@ -28,6 +28,3 @@
     
     python manage.py runserver
     
-    This will start the Django server on http://localhost:8000.
-    
-    API - http://localhost:8000/api/colors
