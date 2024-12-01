@@ -25,7 +25,7 @@ export const COLOR_SCHEMES: Record<ColorType, {
   brgb: {
     properties: ["red", "green", "blue"],
     formatter: (color: { red: number; green: number; blue: number }) =>
-      `brgb(${color.red}, ${color.green}, ${color.blue})`,
+      `rgb(${color.red}, ${color.green}, ${color.blue})`,
   },
 };
 
