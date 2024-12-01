@@ -27,4 +27,15 @@
     pip install -r requirements.txt
     
     python manage.py runserver
+
+**To extend support for new color schemes:**
+
+    Ensure the new color response follows the specified structure.
     
+    **Backend:**
+      
+      Register a brgb color generator using the decorator pattern in colors/utils.py.
+    
+    **Frontend:**
+      
+      Implement a color formatter for brgb in src/Pages/ColorSwatch/store/types.ts and add to COLOR_TYPES.
