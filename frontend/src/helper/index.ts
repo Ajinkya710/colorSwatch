@@ -17,13 +17,13 @@ export const normalizeColor = (color: { [key: string]: number }, type: string) =
         lightness: Math.min(Math.max(color.lightness, 0), 100),
       };
 
-    case 'brgb':
-      // Normalize BRGB values to RGB (0-255)
-      return {
-        red: Math.round((color.red / 10000) * 255),
-        green: Math.round((color.green / 10000) * 255),
-        blue: Math.round((color.blue / 10000) * 255),
-      };
+    // case 'brgb':
+    //   // Normalize BRGB values to RGB (0-255)
+    //   return {
+    //     red: Math.round((color.red / 10000) * 255),
+    //     green: Math.round((color.green / 10000) * 255),
+    //     blue: Math.round((color.blue / 10000) * 255),
+    //   };
 
     default:
       return color;

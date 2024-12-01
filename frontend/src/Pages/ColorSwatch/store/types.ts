@@ -2,7 +2,7 @@ export interface Color {
   type: ColorType;
 }
 
-export const COLOR_TYPES = ["rgb", "hsl", "brgb"]; // add 'brgb' to color types
+export const COLOR_TYPES = ["rgb", "hsl"]; // add 'brgb' to color types
 
 export type ColorType = typeof COLOR_TYPES[number];
  
@@ -22,10 +22,10 @@ export const COLOR_SCHEMES: Record<ColorType, {
     formatter: (color: { hue: number; saturation: number; lightness: number }) =>
       `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`,
   },
-  brgb: {
-    properties: ["red", "green", "blue"],
-    formatter: (color: { red: number; green: number; blue: number }) =>
-      `rgb(${color.red}, ${color.green}, ${color.blue})`,
-  },
+  // brgb: {
+  //   properties: ["red", "green", "blue"],
+  //   formatter: (color: { red: number; green: number; blue: number }) =>
+  //     `rgb(${color.red}, ${color.green}, ${color.blue})`,
+  // },
 };
 
