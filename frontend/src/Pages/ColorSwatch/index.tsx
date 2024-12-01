@@ -52,7 +52,7 @@ const ColorSwatch: React.FC = () => {
 
 export default ColorSwatch;
 
-const PageWrapper = styled.div`
+const PageWrapper = styled.div` 
   padding: 2rem;
 `;
 
