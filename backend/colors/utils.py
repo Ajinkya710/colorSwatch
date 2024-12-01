@@ -30,14 +30,14 @@ def generate_hsl_color():
         'lightness': random.randint(0, 100)
     }
 
-@register_color_generator('brgb')
-def generate_brgb_color():
-    return {
-        'type': 'brgb',
-        'red': random.randint(0, 10000),
-        'green': random.randint(0, 10000),
-        'blue': random.randint(0, 10000)  
-    }
+# @register_color_generator('brgb')
+# def generate_brgb_color():
+#     return {
+#         'type': 'brgb',
+#         'red': random.randint(0, 10000),
+#         'green': random.randint(0, 10000),
+#         'blue': random.randint(0, 10000)  
+#     }
     
 def generate_random_color(num_colors=5):
     """
